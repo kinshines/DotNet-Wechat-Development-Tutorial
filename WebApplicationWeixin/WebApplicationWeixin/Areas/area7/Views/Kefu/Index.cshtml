@@ -1,0 +1,18 @@
+﻿@model  wxBase.Model.Kefu.wxModelKf_list
+@{
+    ViewBag.Title = "客服账号列表信息";
+    Layout = null;
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<h2>客服账号列表信息</h2>
+
+<table border="1">
+@for (int i = 0; i < Model.kf_list.Count; i++)
+{
+    <tr>
+        <td width="200"><p>@Model.kf_list[i].kf_account</p></td>
+        <td width="200"><p>@Model.kf_list[i].kf_nick</p></td>
+        <td>@Html.ActionLink("编辑","Index", "kfaccount_edit", new { oldname = @Model.kf_list[i].kf_account}, null)</td>
+</tr>
+}
+</table>

@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>创建用户分组</h2>
+
+@using (Html.BeginForm("addgroup", "Users", FormMethod.Post))
+{
+    <a>输入用户分组名</a><input type="text" name="groupname"/>
+    <input type="submit" value="提交"/>
+ }
+  <hr />
+
+<ul>
+    <li>@Html.ActionLink("获取用户组信息", "get_groups", "Users")</li>
+</ul>
+
+<h2>修改用户分组</h2>
+
+@using (Html.BeginForm("modifygroup", "Users", FormMethod.Post))
+{
+    <a>输入用户分组id</a><input type="text" name="groupid" />
+    <a>输入用户分组的新名字</a><input type="text" name="groupname" />
+    <input type="submit" value="提交" />
+}
+
+<h2>删除用户分组</h2>
+
+@using (Html.BeginForm("deletegroup", "Users", FormMethod.Post))
+{
+    <a>输入要删除的用户分组id</a><input type="text" name="groupid" />
+    <input type="submit" value="提交" />
+}
+
+<ul>
+    <li>@Html.ActionLink("获取用户信息", "get_users", "Users")</li>
+    <li>@Html.ActionLink("获取行业信息", "get_industry", "Users")</li>
+</ul>
+
+<h2>设置用户备注名</h2>
+
+@using (Html.BeginForm("SetRemark", "Users", FormMethod.Post))
+{
+    <a>输入用户openid</a><input type="text" name="openid" />
+    <a>输入用户的备注名</a><input type="text" name="remark" />
+    <input type="submit" value="提交" />
+}
+
+<h2>查询用户所在分组</h2>
+
+@using (Html.BeginForm("GetGroupId", "Users", FormMethod.Post))
+{
+    <a>输入用户openid</a><input type="text" name="openid" />
+    <input type="submit" value="提交" />
+}
+
+<h2>移动用户到指定分组</h2>
+
+@using (Html.BeginForm("updateGroup", "Users", FormMethod.Post))
+{
+    <a>输入用户openid</a><input type="text" name="openid" />
+    <a>输入用户组groupid</a><input type="text" name="groupid" />
+    <input type="submit" value="提交" />
+}
+
+<h2>批量移动用户到指定分组</h2>
+
+@using (Html.BeginForm("batchupdateGroup", "Users", FormMethod.Post))
+{
+    <a>输入用户openid1</a><input type="text" name="openid1" />
+    <a>输入用户openid2</a><input type="text" name="openid2" />
+    <a>输入用户组groupid</a><input type="text" name="groupid" />
+    <input type="submit" value="提交" />
+}
+
+
+
+
+
+
+

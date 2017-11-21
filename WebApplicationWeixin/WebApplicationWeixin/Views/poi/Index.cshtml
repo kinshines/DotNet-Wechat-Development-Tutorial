@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>创建门店</h2>
+
+@Html.ActionLink("上传门店图片", "uploadimg","poi")
+@using (Html.BeginForm("add", "poi", FormMethod.Post))
+{
+    <a>门店名称</a><input type="text" name="business_name" /> <br />
+    <a>分店名称</a><input type="text" name="branch_name" /><br />
+    <a>位置</a><input type="text" name="province" /><input type="text" name="city" /><input type="text" name="district" /><br />
+    <a>地址</a><input type="text" name="address" /><br />
+    <a>电话</a><input type="text" name="telephone" /><br />
+    <a>门店类型</a><input type="text" name="categories" /><br />
+    <a>经度</a><input type="text" name="longitude" /><br />
+    <a>纬度</a><input type="text" name="latitude" /><br />
+    <a>特色服务</a><input type="text" name="special" /><br />
+    <a>营业时间</a><input type="text" name="open_time" /><br />
+    <a>人均价格</a><input type="text" name="avg_price" /><br />
+    <a>门店id</a><input type="text" name="poi_id" /><br />
+    <a>商户简介</a><input type="text" name="introduction" /><br />
+    <a>推荐品</a><input type="text" name="recommend" /><br />
+    <a>门店图片1</a><input type="text" name="photo1"  /><br />
+    <a>门店图片2</a><input type="text" name="photo2"style="width:600px;"  /><br />
+    <a>门店图片3</a><input type="text" name="photo3" style="width:600px;"  /><br />
+    <a>门店图片4</a><input type="text" name="photo4" style="width:600px;"  /><br />
+    <a>门店图片5</a><input type="text" name="photo5" style="width:600px;"  /><br />
+
+    <input type="submit" value="提交" />
+}
+
+@Html.ActionLink("获取门店列表", "getpoilist")
+

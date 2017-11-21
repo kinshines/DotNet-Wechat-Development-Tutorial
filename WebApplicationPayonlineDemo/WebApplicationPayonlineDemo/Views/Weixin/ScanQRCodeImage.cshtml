@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/weixinscan.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>ScanQRCodeImage</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/DC.jquery.Core.js"></script>
+    <script type="text/javascript">
+        function query_pay_state() {
+            var orderno = getQueryString("orderno");
+
+            $.ajax ({
+           type: "get",
+           url: "@Url.Action("QueryOrderStatus", "Weixin")",
+           async: false,
+           dataType: "text",
+           data: { 'orderno': orderno },
+           success: function (data) {
+               if (data != "")
+                   window.location = '@Url.Action("Orderlist", "Weixin")'
+               setTimeout(query_pay_state, 1000);
+
+           },
+
+           error: function (XMLHttpRequest, textStatus, errorThrown) {
+           }
+
+       });
+        }
+        jQuery(function () {
+            var url = getQueryString("url");
+            $("#img_qrcode").attr("src", '@Url.Action("MakeQRCodeImage", "weixin")' + "?url=" + url);
+            setTimeout(query_pay_state, 1000);
+        });
+    </script>
+
+</head>
+<body>
+    <div id="scanbox"> 
+        <div id="scanbox_left"><img id="img_qrcode" width="260" height="260"/>
+            <img id="weixi_text" src="~/images/weixi_text.png" /></div><img id="img_sys" src="~/images/saoyisao.png" style="margin-left:280px;" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "savecard";
+}
+
+<h2>savecard</h2>
+
+@if (!string.IsNullOrEmpty(@ViewBag.cardid))
+{
+    Response.Write("<p>成功创建团购券，卡号：" + ViewBag.cardid + "</p>");
+
+}
+else
+{
+    Response.Write("<p>创建团购券失败：" + ViewBag.errmsg + "</p>");
+}

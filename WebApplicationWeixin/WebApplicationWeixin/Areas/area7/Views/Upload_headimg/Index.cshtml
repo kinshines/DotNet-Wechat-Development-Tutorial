@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>上传客服头像</h2>
+@using (Html.BeginForm("Upload_headimg", "Kefu", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <a>输入客服账号</a><input type="text" name="kfaccount" />
+    <p>选择上传文件：</p><input name="file_headimg" type="file" id="file_thumb" />
+    <br />
+    <br />
+    <input type="submit" value="上传" />
+}
+

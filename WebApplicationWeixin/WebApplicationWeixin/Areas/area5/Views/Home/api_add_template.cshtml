@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "api_add_template";
+}
+<h2>获得模板ID</h2>
+
+@using (Html.BeginForm("GetTemplateID", "Template", FormMethod.Post))
+{
+    <a>消息模板编号</a><input type="text" name="template_id_short" />
+    <input type="submit" value="提交" />
+}
+
+
+

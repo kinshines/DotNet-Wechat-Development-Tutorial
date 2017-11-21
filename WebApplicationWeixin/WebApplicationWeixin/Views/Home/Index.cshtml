@@ -1,0 +1,30 @@
+﻿
+<link href="~/Content/Site.css" rel="stylesheet" />
+<style type="text/css">
+    .jumbotron ul li a {
+        font-family: 微软雅黑;
+        font-size: small;
+        text-decoration: none;
+    }
+</style>
+
+
+<div class="jumbotron">
+    <ul>
+        <li>@Html.ActionLink("第1章 微信公众平台应用基础", "Index", "Home",  new { area= "area1" }, null)</li>
+        <li>@Html.ActionLink("第2章 ASP.NET MVC开发基础", "Index", "Home", new { area = "area2" }, null)</li>
+        <li>@Html.ActionLink("第3章 使用ASP.NET空间搭建微信公众平台", "Index","Home", new { area = "area3" }, null )</li>
+        <li>@Html.ActionLink("第4章 自定义菜单开发", "Index", "Home", new { area = "area4" }, null)</li>
+        <li>@Html.ActionLink("第5章 消息接口", "Index", "Home", new { area = "area5" }, null)</li>
+        <li>@Html.ActionLink("第6章 用户管理", "Index", "Home", new { area = "area6" }, null)</li>
+        <li>@Html.ActionLink("第7章 客服管理", "Index", "Home", new { area = "area7" }, null)</li>
+        <li>@Html.ActionLink("第8章 素材管理", "Index", "Home", new { area = "area8" }, null)</li>
+        <li>@Html.ActionLink("第9章 统计分析", "Index", "Home", new { area = "area9" }, null)</li>
+        <li>@Html.ActionLink("第10章 开发微信网页", "Index", "Home", new { area = "area10" }, null)</li>
+        <li>@Html.ActionLink("第11章 微信门店管理", "Index", "Home", new { area = "area11" }, null)</li>
+        <li>@Html.ActionLink("第12章 微信支付", "Index", "Home", new { area = "area12" }, null)</li>
+    </ul>
+
+
+    @Html.ActionLink("区域AreaDemo的首页", "Index", "Home", new { area = "areaDemo" }, null)
+</div>

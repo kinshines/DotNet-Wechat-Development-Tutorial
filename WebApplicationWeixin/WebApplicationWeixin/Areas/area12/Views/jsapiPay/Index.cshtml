@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "JSAPI支付";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+<link href="~/Content/style.css" rel="stylesheet" />
+<script language="javascript" type="text/javascript">
+    // 当微信内置浏览器完成内部初始化后会触发WeixinJSBridgeReady事件。
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        // alert('ok');
+        //公众号支付
+        $('#btn_JsApiPay').click(function (e) {
+            WeixinJSBridge.invoke('getBrandWCPayRequest',
+                {
+                    "appId": "@ViewBag.appid",
+                    "nonceStr": "@ViewBag.nonceStr",
+                    "package": "@ViewBag.package",
+                    "paySign": "@ViewBag.paySign",
+                    "signType": "@ViewBag.signType",
+                    "timeStamp": "@ViewBag.timeStamp"
+                }, function (res) {
+                        //alert(res.err_msg);
+                        if (res.err_msg == "get_brand_wcpay_request:ok") {
+                            //window.location.href="/wx/StoreManage/WX_HB/WXSuccess.aspx?bill="+$("#body_hidBill").val();
+                        }                        
+                    });
+        });
+
+    }, false)
+</script>
+
+<br /><br />
+<h2>JSAPI支付</h2>
+
+<button class="btn btn_primary" id="btn_JsApiPay" style="margin-top:50%;margin-bottom:50%;">测试JSAPI支付</button>
+
+
+

@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<ul>
+    <li>@Html.ActionLink("创建自定义菜单", "Create", "Menu")</li>
+    <li>@Html.ActionLink("查询自定义菜单", "Get", "Menu")</li>
+    <li>@Html.ActionLink("删除自定义菜单", "delete", "Menu")</li>
+   <li>@Html.ActionLink("获取自定义菜单配置", "GetConfig", "Menu")</li>
+  <li>@Html.ActionLink("创建个性化菜单", "addconditional", "Menu")</li>
+    <li>@Html.ActionLink("删除个性化菜单", "delconditional", "Menu")</li>
+    <li>@Html.ActionLink("测试个性化菜单匹配结果", "trymatch", "Menu")</li>
+</ul>

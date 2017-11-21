@@ -1,0 +1,232 @@
+﻿body {
+    background-color: #f2f2f2;
+    margin-top:40px;
+}
+
+.bgdiv {
+    background-color: #fff;
+    width: 1000px;
+    height:670px;
+    border: 1px solid #b5b5b5;
+    margin: 0px auto;
+}
+
+    .bgdiv .secondDiv {
+        margin: 0px auto;
+        width: 855px;
+    }
+#logo {
+    margin-top:20px;
+}
+#time {
+    margin-left:280px;
+    margin-bottom:16px;
+}
+.telephone {
+    float:right;
+    margin-top:43px;
+    margin-right:50px;
+}
+    .telephone.kefu1 {
+        font-size:16px;
+        color:#333;
+    }
+        .bgdiv .secondDiv .firstBlueDiv {
+            margin: 0px auto;
+            background-color: #2da1e7;
+            width: 855px;
+            height: 6px;
+        }
+
+        .bgdiv .secondDiv .titleName {
+            font-size: 24px;
+            color: #000;
+            margin: 15px auto;
+            width: 855px;
+            text-align: center;
+        }
+
+        .bgdiv .secondDiv table .table_td {
+            width: 230px;
+            text-align: left;
+        }
+
+        .bgdiv .secondDiv table tr td {
+            height: 30px;
+        }
+
+        .bgdiv .secondDiv .chuyou {
+            width: 855px;
+            height: 20px;
+            text-align: center;
+        }
+
+            .bgdiv .secondDiv .chuyou .chuyou_xian1 {
+                background-color: #2da1e7;
+                height: 6px;
+                width: 30px;
+                margin-top: 50px;
+                float: left;
+            }
+
+.chuyou .chuyou_font {
+    float: left;
+    width: 80px;
+    height: 20px;
+}
+
+    .chuyou .chuyou_font span {
+        color: #2da1e7;
+        font-size: 18px;
+        width: 80px;
+        height: 50px;
+        line-height: 100px;
+    }
+
+.chuyou .chuyou_xian2 {
+    background-color: #2da1e7;
+    height: 6px;
+    width: 745px;
+    margin-top: 50px;
+    float: left;
+}
+
+.bgdiv .secondDiv .xinxi {
+    font-size: 12px;
+    color: #333;
+}
+
+.bgdiv .secondDiv .hetongmingcheng {
+    width: 855px;
+    height: 40px;
+    border: 1px solid #e5e5e5;
+    background-color: #ededed;
+    text-align: center;
+}
+
+    .bgdiv .secondDiv .hetongmingcheng span {
+        line-height: 40px;
+        width: 855px;
+        height: 40px;
+    }
+
+.bgdiv .secondDiv .hetongliebiao {
+    width: 855px;
+    height: 185px;
+    border: 1px solid #e5e5e5;
+}
+
+    .bgdiv .secondDiv .hetongliebiao .liebiao1 {
+        border: 1px solid #ff8500;
+        width: 500px;
+        height: 30px;
+        text-align: center;
+        margin: 0px auto;
+    }
+
+        .bgdiv .secondDiv .hetongliebiao .liebiao1 span {
+            width: 500px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+    .bgdiv .secondDiv .hetongliebiao .liebiao2 {
+        width: 500px;
+        height: 30px;
+        text-align: center;
+        margin: 0px auto;
+        margin-top: 30px;
+    }
+
+        .bgdiv .secondDiv .hetongliebiao .liebiao2 span {
+            width: 500px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+
+.fujian {
+    margin-top: 60px;
+    border:1px solid #c6c5c5;
+    width:128px;
+    height:30px;
+}
+
+.fujianhead {
+    width: 725px;
+    background-color: #c6c5c5;
+    height: 1px;
+    margin-top:4px;
+    margin-left:128px;
+}
+
+.paymoney {
+    height: 20px;
+    margin-left: 550px;
+    margin-top:-20px;
+    width:330px;
+}
+    #fontsize {
+        font-size:18px;
+        font-weight:700;
+        color:#f60;
+    }
+
+.fujiansize  {
+    height: 20px;
+    margin-left: 20px;
+    margin-top:6px;
+   
+}
+
+    .fujiansize span {
+        line-height: 18px;
+        text-align: center;
+        font-size:16px;
+    }
+
+.qianyue {
+    margin-top: 30px;
+    height: 36px;
+    text-align: center;
+}
+
+    .qianyue input {
+        height: 36px;
+        background-color: #f90;
+        width: 128px;
+        border: none;
+        border-radius: 4px;
+        margin: 0px auto;
+        color: white;
+    }
+
+        .qianyue input:hover {
+            background-color: #f60;
+            color: white;
+        }
+
+.zhanwei {
+    height: 100px;
+}
+
+#zhifubao_box {
+    width:145px;
+    height:53px;
+    margin:15px 0px 0px -380px;
+    cursor:pointer;
+    float:left;
+    background-image:url(/Images/zhifubao_logo.jpg);
+    background-size:100%;
+}
+
+#weixinpay_box {
+    width:145px;
+    height:53px;
+    background-image:url(/Images/WePayLogo.png);
+    background-repeat:no-repeat;
+    margin:15px 0px 0px -200px;
+    cursor:pointer;
+    float:left;
+    background-size:100%;
+}

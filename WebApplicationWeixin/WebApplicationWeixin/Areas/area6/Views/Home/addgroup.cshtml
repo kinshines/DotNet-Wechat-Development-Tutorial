@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "创建用户分组";
+}
+
+<h2>创建用户分组</h2>
+
+@using (Html.BeginForm("add", "usergroup", FormMethod.Post))
+{
+    <a>输入用户分组名</a><input type="text" name="groupname" />
+    <input type="submit" value="提交" />
+}

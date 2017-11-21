@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "上传门店图片";
+}
+
+<h2>上传门店图片</h2>
+
+@using (Html.BeginForm("Upload_poiimg", "poi", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>选择上传文件：</p><input name="poiimg" type="file" id="poiimg" />
+    <br />
+    <br />
+    <input type="submit" name="Upload_newsimg" value="上传" />
+}
+

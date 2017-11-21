@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7C0AA5A9-A929-4C70-81CB-40113D6A36E5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>wxBase</RootNamespace>
+    <AssemblyName>wxBase</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LitJson, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="MY.Utils">
+      <HintPath>..\..\..\..\..\..\output\youxuewang\MY.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JssdkService.cs" />
+    <Compile Include="Model\DataCube\wxResultUserCumulate.cs" />
+    <Compile Include="Model\DataCube\wxResultUsersummary.cs" />
+    <Compile Include="Model\DataCube\wxUserCumulate.cs" />
+    <Compile Include="Model\DataCube\wxUsersummary.cs" />
+    <Compile Include="Model\JsSdk\wxTicketData.cs" />
+    <Compile Include="Model\Kefu\wxModelKf_info.cs" />
+    <Compile Include="Model\Kefu\wxModelKf_list.cs" />
+    <Compile Include="Model\Media\UploadMediaResult.cs" />
+    <Compile Include="Model\Media\UpoladThumbResult.cs" />
+    <Compile Include="Model\Message\wxModelTemplate.cs" />
+    <Compile Include="Model\Message\wxModelTemplateInfo.cs" />
+    <Compile Include="Model\Message\wxModelTemplateList.cs" />
+    <Compile Include="Model\Pay\PayForWeiXinHelp.cs" />
+    <Compile Include="Model\Pay\PayWeiXin.cs" />
+    <Compile Include="Model\Pay\wxRedPackPackage.cs" />
+    <Compile Include="Model\Pay\wxpayPackage.cs" />
+    <Compile Include="Model\poi\wxPoiBaseInfo.cs" />
+    <Compile Include="Model\poi\wxPoiInfo.cs" />
+    <Compile Include="Model\poi\wxReturnAddcard.cs" />
+    <Compile Include="Model\poi\wxReturnAddpoi.cs" />
+    <Compile Include="Model\poi\wxReturnPoiInfo.cs" />
+    <Compile Include="Model\poi\wxPoilist.cs" />
+    <Compile Include="Model\poi\wxPoiPhotourl.cs" />
+    <Compile Include="Model\weidian\ProductInfo.cs" />
+    <Compile Include="Model\weidian\ProductProperty.cs" />
+    <Compile Include="Model\weidian\SkuInfo.cs" />
+    <Compile Include="Model\wxJsapi_ticket.cs" />
+    <Compile Include="Model\wxPayReturnValue.cs" />
+    <Compile Include="OAuth2Service.cs" />
+    <Compile Include="MessageEncryption\Cryptography.cs" />
+    <Compile Include="MessageEncryption\WXBizMsgCrypt.cs" />
+    <Compile Include="Model\Industry\wxIndustryClass.cs" />
+    <Compile Include="Model\Industry\wxIndustryInfo.cs" />
+    <Compile Include="Model\Media\wxMaterialcount.cs" />
+    <Compile Include="Model\Media\wxMaterialitem.cs" />
+    <Compile Include="Model\Media\wxMateriallist.cs" />
+    <Compile Include="Model\OAuth2\UserAccessToken.cs" />
+    <Compile Include="Model\Users\wxUserData.cs" />
+    <Compile Include="Model\Users\wxUserGroup.cs" />
+    <Compile Include="Model\Users\wxUserGroups.cs" />
+    <Compile Include="Model\Users\wxUserInfo.cs" />
+    <Compile Include="Model\Users\wxUsersSummary.cs" />
+    <Compile Include="StreamReaderUtils.cs" />
+    <Compile Include="StringService.cs" />
+    <Compile Include="wxDatacubeService.cs" />
+    <Compile Include="HttpService.cs" />
+    <Compile Include="JSONHelper.cs" />
+    <Compile Include="LogService.cs" />
+    <Compile Include="Model\Menu\wxModelMenuNewsInfo.cs" />
+    <Compile Include="Model\Media\UploadImgResult.cs" />
+    <Compile Include="Model\wxCallbackip.cs" />
+    <Compile Include="Model\Menu\wxModelMenuButton.cs" />
+    <Compile Include="Model\Menu\wxModelMenuConfig.cs" />
+    <Compile Include="Model\Menu\wxModelMenuInfo.cs" />
+    <Compile Include="Model\Menu\wxModelMenuSubButton.cs" />
+    <Compile Include="Model\Menu\wxModelMenuSubButtons.cs" />
+    <Compile Include="Model\wxModelMessage.cs" />
+    <Compile Include="Model\wxResult.cs" />
+    <Compile Include="wxIndustryService.cs" />
+    <Compile Include="wxMediaService.cs" />
+    <Compile Include="weixinService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="wxMenuService.cs" />
+    <Compile Include="Model\wxAccessToken.cs" />
+    <Compile Include="wxMessageService.cs" />
+    <Compile Include="wxPayService.cs" />
+    <Compile Include="wxPay\NativePay.cs" />
+    <Compile Include="wxPay\Notify.cs" />
+    <Compile Include="wxPay\ResultNotify.cs" />
+    <Compile Include="wxPay\WxPayApi.cs" />
+    <Compile Include="wxPay\WxPayConfig.cs" />
+    <Compile Include="wxPay\wxPayData.cs" />
+    <Compile Include="wxPay\WxPayException.cs" />
+    <Compile Include="wxUsersService.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>attrib -r "D:\output\youxuewang\$(TargetName).*"
+del "D:\output\youxuewang\$(TargetName).*"
+copy $(TargetName).* "D:\output\youxuewang" /B
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>删除永久素材</h2>
+
+<div style="width:100%;border:1px solid red; height:100px;">
+    @using (Html.BeginForm("delete", "Home", FormMethod.Post))
+    {
+        <a>输入media id:</a><input name="Mediaid" type="text" />
+        <input type="submit" value="删除">
+    }
+

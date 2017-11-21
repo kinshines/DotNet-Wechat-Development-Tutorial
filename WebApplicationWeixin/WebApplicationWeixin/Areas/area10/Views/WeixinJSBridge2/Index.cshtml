@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<br /><br />
+<!DOCTYPE html>
+<html>
+<head>
+    <title>微信WeixinJSBridge API</title>
+    <meta charset=utf-8>
+
+
+</head>
+<body>
+    <section class=mod-page-body>
+        <div class="mod-page-main wordwrap clearfix">
+            <div class=mod-pageheader></div>
+            <div class=mod-pagecontent>
+                <div class=mod-weixinjsapi>
+                    <div class=x-desc>微信客户端自带的Js Api：WeixinJSBridge</div>
+                    <div id=WeixinJsApi>
+                        <input type=button id="imagePreview" value="图片预览"/>
+                        <input type=button id="getNetType" value="获取网络状态"/>
+                        <input type=button id="closeWindow" value="关闭"/>
+                        <input type=button id="sendEmail" value="发邮件"/>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+function onBridgeReady() {
+}
+
+if (typeof WeixinJSBridge === "undefined"){
+    if (document.addEventListener){
+        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+    }
+}else{
+    onBridgeReady();
+}
+
+    var netType={"network_type:wifi":"wifi网络","network_type:edge":"非wifi,包含3G/2G","network_type:fail":"网络断开连接","network_type:wwan":"2g或者3g"};
+    document.addEventListener("WeixinJSBridgeReady",function(){
+            document.getElementById("imagePreview").addEventListener(
+            "click",function(){
+                                WeixinJSBridge.invoke("imagePreview",{
+                "urls":[
+                "http://rescdn.qqmail.com/bizmail/zh_CN/htmledition/images/bizmail/v3/logo1ca3fe.png",
+                "http://rescdn.qqmail.com/bizmail/zh_CN/htmledition/images/bizmail/v3/icons_features1ca3fe.png",
+                "http://rescdn.qqmail.com/bizmail/zh_CN/htmledition/images/bizmail/v3/icons_workStyle1ca3fe.png"
+                ],
+                "current":"http://rescdn.qqmail.com/bizmail/zh_CN/htmledition/images/bizmail/v3/icons_features1ca3fe.png"
+                })
+                        },!1),
+     
+        document.getElementById("getNetType").addEventListener(
+            "click", function () {
+                alert("getNetType clicked");
+
+                WeixinJSBridge.invoke("getNetworkType",{},
+                    function(e){
+                        alert(netType[e.err_msg])
+                    })
+            },!1),
+         document.getElementById("closeWindow").addEventListener(
+                        "click",function(){
+                                WeixinJSBridge.invoke("closeWindow",{},function(e){})
+                        },!1),
+
+        document.getElementById("sendEmail").addEventListener(
+            "click", function () {
+                alert("sendEmail")
+            WeixinJSBridge.invoke("sendEmail",{
+                "title" : "title!",
+                "content" : "i am an Email!", //时间戳 这⾥里随意使⽤用了⼀一个值
+                },
+                function(e){
+        //          alert(e.err_msg)
+                })
+            },!1)     
+        }
+    );
+    </script>
+
+

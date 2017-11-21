@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>获取永久素材图片</h2>
+
+<div style="width:100%;border:1px solid red; height:100px;">
+    @using (Html.BeginForm("Get_Material", "Home", FormMethod.Post))
+    {
+        <a>输入media id:</a><input name="Mediaid" type="text" />
+        <input type="submit" value="获取">
+    }
+</div>
+
+

@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "updatemembers";
+}
+
+<h2>移动用户到指定分组</h2>
+
+@using (Html.BeginForm("updateGroup", "Home", FormMethod.Post))
+{
+    <a>输入用户openid</a><input type="text" name="openid" />
+    <a>输入用户组groupid</a><input type="text" name="groupid" />
+    <input type="submit" value="提交" />
+}
+
+

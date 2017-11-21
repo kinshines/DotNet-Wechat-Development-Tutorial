@@ -1,0 +1,31 @@
+{
+     "button":[
+     {	
+          "type":"click",
+          "name":"今日新闻",
+          "key":"V1001_TODAY_NEWS"
+      },
+      {
+           "name":"菜单",
+           "sub_button":[
+           {	
+               "type":"view",
+               "name":"搜索",
+               "url":"http://www.baidu.com/"
+            },
+            {
+               "type":"view",
+               "name":"视频",
+               "url":"http://www.youku.com/"
+            }]
+          }],
+     "matchrule":{
+       "tag_id":"2",
+       "sex":"1",
+       "country":"中国",
+       "province":"广东",
+       "city":"广州",
+       "client_platform_type":"2",
+       "language":"zh_CN"
+  }     
+}

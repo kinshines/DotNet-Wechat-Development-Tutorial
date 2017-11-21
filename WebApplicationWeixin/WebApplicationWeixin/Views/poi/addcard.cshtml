@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "addcard";
+}
+
+<h2>创建团购券</h2>
+
+@using (Html.BeginForm("savecard", "poi", FormMethod.Post))
+{
+    <table border="1">
+        <tr>
+            <td><a>logo url</a></td>
+            <td></td>
+            <td><input type="text" name="logo_url" /><input type="hidden" name="logo_url" /></td>
+            <td width="10"></td>
+            <td>  <a>商户名</a></td>
+            <td></td>
+            <td><input type="text" name="brand_name" /></td></tr>
+        <tr>
+            <td><a>标题</a></td>
+            <td></td>
+            <td><input type="text" name="title" /></td>
+            <td width="10"></td>
+            <td>  <a>子标题</a></td>
+            <td></td>
+            <td><input type="text" name="sub_title" /></td></tr>
+        <tr>
+            <td><a>提示</a></td>
+            <td></td>
+            <td><input type="text" name="notice" /></td>
+            <td width="10"></td>
+            <td>  <a>服务电话</a></td>
+            <td></td>
+            <td><input type="text" name="service_phone" /></td>
+        </tr>
+        <tr>
+            <td><a>描述</a></td>
+            <td></td>
+            <td><input type="text" name="description" /></td>
+            <td width="10"></td>
+            <td>  <a>有效期</a></td>
+            <td></td>
+            <td><input type="text" name="begin_date" />~<input type="text" name="end_date" /></td>
+        </tr>
+        <tr>
+            <td><a>库存数量</a></td>
+            <td></td>
+            <td><input type="text" name="quantity" /></td>
+            <td width="10"></td>
+            <td>  <a>顶部居中按钮</a></td>
+            <td></td>
+            <td><input type="text" name="center_title" /></td>
+        </tr>
+        <tr>
+            <td><a>顶部居中按钮下方的文本</a></td>
+            <td></td>
+            <td><input type="text" name="center_sub_title" /></td>
+            <td width="10"></td>
+            <td>  <a></a></td>
+            <td><a>顶部居中按钮的链接</a></td>
+            <td><input type="text" name="center_url" /></td>
+        </tr>
+        <tr>
+            <td><a>自定义链接的标题</a></td>
+            <td></td>
+            <td><input type="text" name="custom_url_name" /></td>
+            <td width="10"></td>
+            <td>  </td>
+            <td><a>自定义的子标题</a></td>
+            <td><input type="text" name="custom_url_sub_title" /></td>
+        </tr>
+        <tr>
+            <td><a>详细描述</a></td>
+            <td></td>
+            <td colspan="5"><input type="text" name="deal_detail" /></td>            
+        </tr>
+
+
+</table>
+    <input type="submit" value="提交" />
+}
+
+

@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "getusersummary";
+
+    wxBase.Model.DataCube.wxResultUsersummary ru = (wxBase.Model.DataCube.wxResultUsersummary)ViewBag.Result;
+}
+
+<h2>getusersummary</h2>
+
+<ul>
+    @for (int i = 0; i < ru.list.Count; i++)
+    {
+        var user_source = "";
+        switch (ru.list[i].user_source)
+        {
+            case 0:
+                user_source = "其他合计";
+                break;
+            case 1:
+                user_source = "公众号搜索";
+                break;
+            case 17:
+                user_source = "名片分享";
+                break;
+            case 30:
+                user_source = "扫描二维码";
+                break;
+            case 43:
+                user_source = "图文页右上角菜单";
+                break;
+            case 51:
+                user_source = "支付后关注（在支付完成页）";
+                break;
+            case 57:
+                user_source = "图文页内公众号名称";
+                break;
+            case 75:
+                user_source = "公众号文章广告";
+                break;
+            case 78:
+                user_source = "代表朋友圈广告";
+                break;
+        }
+        <li> 日期：@ru.list[i].ref_date    用户的渠道: @user_source     新增的用户数量:  @ru.list[i].new_user     取消关注的用户数量 :  @ru.list[i].cancel_user</li>
+    }
+</ul>

@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "WeixinJSBridge";
+}
+<script type="text/javascript">
+    document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() 
+    {
+        alert("WeixinJSBridgeReady");
+        WeixinJSBridge.call('hideOptionMenu');
+        WeixinJSBridge.call('showToolbar');
+    });
+
+</script>
+<h2>WeixinJSBridge</h2>
+

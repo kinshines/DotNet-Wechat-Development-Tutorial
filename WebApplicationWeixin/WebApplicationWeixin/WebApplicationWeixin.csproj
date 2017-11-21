@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A17A26D2-3976-4E37-872B-5125E4E61340}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplicationWeixin</RootNamespace>
+    <AssemblyName>WebApplicationWeixin</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.1.1.4\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Owin.1.1.4\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.1.1.4\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.1.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="ThoughtWorks.QRCode">
+      <HintPath>..\..\..\..\..\..\output\youxuewang\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="wxBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\output\youxuewang\wxBase.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\area10\area10AreaRegistration.cs" />
+    <Compile Include="Areas\area10\Controllers\CssSampleController.cs" />
+    <Compile Include="Areas\area10\Controllers\HomeController.cs" />
+    <Compile Include="Areas\area10\Controllers\jQueryMobileController.cs" />
+    <Compile Include="Areas\area10\Controllers\JsSdkController.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_10Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_11Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_12Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_13Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_14Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_15Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_16Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_3Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_4Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_5Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_6Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_7Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_8Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\Sample10_9Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\WeixinJSBridge2Controller.cs" />
+    <Compile Include="Areas\area10\Controllers\WeixinJSBridgeController.cs" />
+    <Compile Include="Areas\area11\area11AreaRegistration.cs" />
+    <Compile Include="Areas\area11\Controllers\addpoiController.cs" />
+    <Compile Include="Areas\area11\Controllers\HomeController.cs" />
+    <Compile Include="Areas\area12\area12AreaRegistration.cs" />
+    <Compile Include="Areas\area12\Controllers\HomeController.cs" />
+    <Compile Include="Areas\area12\Controllers\jsapiPayController.cs" />
+    <Compile Include="Areas\area12\Controllers\scanPayController.cs" />
+    <Compile Include="Areas\area1\area1AreaRegistration.cs" />
+    <Compile Include="Areas\area1\Controllers\HomeController.cs" />
+    <Compile Include="Areas\area2\area2AreaRegistration.cs" />
+    <Compile Include="Areas\area2\Controllers\HelloController.cs" />
+    <Compile Include="Areas\area2\Controllers\HomeController.cs" />
+    <Compile Include="Areas\area2\Controllers\RenderSectionController.cs" />
+    <Compile Include="Areas\area3\area3AreaRegistration.cs" />
+    <Compile Include="Areas\area3\Controllers\HomeController.cs" />
+    <Compile Include="Areas\area4\area4AreaRegistration.cs" />
+    <Compile Include="Areas\area4\Controllers\HomeController.cs" />
+    <Compile Include="Areas\area4\Controllers\menuController.cs" />
+    <Compile Include="Areas\area5\area5AreaRegistration.cs" />
+    <Compile Include="Areas\area5\Controllers\HomeController.cs" />
+    <Compile Include="Areas\area5\Controllers\industryController.cs" />
+    <Compile Include="Areas\area5\Controllers\TemplateController.cs" />
+    <Compile Include="Areas\area6\area6AreaRegistration.cs" />
+    <Compile Include="Areas\area6\Controllers\GetGroupIdController.cs" />
+    <Compile Include="Areas\area6\Controllers\HomeController.cs" />
+    <Compile Include="Areas\area6\Views\Home\usergroupController.cs" />
+    <Compile Include="Areas\area7\area7AreaRegistration.cs" />
+    <Compile Include="Areas\area7\Controllers\HomeController.cs" />
+    <Compile Include="Areas\area7\Controllers\KefuController.cs" />
+    <Compile Include="Areas\area7\Controllers\kfaccount_addController.cs" />
+    <Compile Include="Areas\area7\Controllers\kfaccountController.cs" />
+    <Compile Include="Areas\area7\Controllers\Upload_headimgController.cs" />
+    <Compile Include="Areas\area7\kfaccount_deleteController.cs" />
+    <Compile Include="Areas\area8\area8AreaRegistration.cs" />
+    <Compile Include="Areas\area8\Controllers\add_materialController.cs" />
+    <Compile Include="Areas\area8\Controllers\add_newsController.cs" />
+    <Compile Include="Areas\area8\Controllers\del_materialController.cs" />
+    <Compile Include="Areas\area8\Controllers\getmediaController.cs" />
+    <Compile Include="Areas\area8\Controllers\Get_MaterialController.cs" />
+    <Compile Include="Areas\area8\Controllers\HomeController.cs" />
+    <Compile Include="Areas\area8\Controllers\uploadmediaController.cs" />
+    <Compile Include="Areas\area8\Controllers\UploadthumbController.cs" />
+    <Compile Include="Areas\area8\Controllers\Upload_newsimgController.cs" />
+    <Compile Include="Areas\area9\area9AreaRegistration.cs" />
+    <Compile Include="Areas\area9\Controllers\DataCubeController.cs" />
+    <Compile Include="Areas\area9\Controllers\getuserreadController.cs" />
+    <Compile Include="Areas\area9\Controllers\HomeController.cs" />
+    <Compile Include="Areas\areaDemo\areaDemoAreaRegistration.cs" />
+    <Compile Include="Areas\areaDemo\Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Auth2Controller.cs" />
+    <Compile Include="Controllers\Chp10Controller.cs" />
+    <Compile Include="Controllers\Chp11Controller.cs" />
+    <Compile Include="Controllers\chp1Controller.cs" />
+    <Compile Include="Controllers\chp2Controller.cs" />
+    <Compile Include="Controllers\Chp3Controller.cs" />
+    <Compile Include="Controllers\Chp4Controller.cs" />
+    <Compile Include="Controllers\DatacubeController.cs" />
+    <Compile Include="Controllers\DatacubeMsgController.cs" />
+    <Compile Include="Controllers\echoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JsSdkController.cs" />
+    <Compile Include="Controllers\KefuController.cs" />
+    <Compile Include="Controllers\MediaController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
+    <Compile Include="Controllers\poiController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\10_4.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\gulpfile.js" />
+    <Content Include="Content\pay.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\weixinscan.css" />
+    <Content Include="Content\weui-master\dist\example\example.css" />
+    <Content Include="Content\weui-master\dist\example\example.js" />
+    <Content Include="Content\weui-master\dist\example\images\icon_nav_actionSheet.png" />
+    <Content Include="Content\weui-master\dist\example\images\icon_nav_article.png" />
+    <Content Include="Content\weui-master\dist\example\images\icon_nav_button.png" />
+    <Content Include="Content\weui-master\dist\example\images\icon_nav_cell.png" />
+    <Content Include="Content\weui-master\dist\example\images\icon_nav_dialog.png" />
+    <Content Include="Content\weui-master\dist\example\images\icon_nav_icons.png" />
+    <Content Include="Content\weui-master\dist\example\images\icon_nav_msg.png" />
+    <Content Include="Content\weui-master\dist\example\images\icon_nav_toast.png" />
+    <Content Include="Content\weui-master\dist\example\images\vcode.jpg" />
+    <Content Include="Content\weui-master\dist\example\index.html" />
+    <Content Include="Content\weui-master\dist\example\snapshot\actionSheet.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\button.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\cell.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\dialog1.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\dialog2.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\grid.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\icons.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\progress.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\qrcode.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\result.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\text.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\toast1.png" />
+    <Content Include="Content\weui-master\dist\example\snapshot\toast2.png" />
+    <Content Include="Content\weui-master\dist\example\zepto.min.js" />
+    <Content Include="Content\weui-master\dist\style\weui.css" />
+    <Content Include="Content\weui-master\dist\style\weui.min.css" />
+    <Content Include="Content\weui-master\gulpfile.js" />
+    <Content Include="Content\weui-master\src\example\example.js" />
+    <Content Include="Content\weui-master\src\example\fragment\actionsheet.html" />
+    <Content Include="Content\weui-master\src\example\fragment\article.html" />
+    <Content Include="Content\weui-master\src\example\fragment\button.html" />
+    <Content Include="Content\weui-master\src\example\fragment\cell.html" />
+    <Content Include="Content\weui-master\src\example\fragment\dialog.html" />
+    <Content Include="Content\weui-master\src\example\fragment\home.html" />
+    <Content Include="Content\weui-master\src\example\fragment\icons.html" />
+    <Content Include="Content\weui-master\src\example\fragment\msg.html" />
+    <Content Include="Content\weui-master\src\example\fragment\progress.html" />
+    <Content Include="Content\weui-master\src\example\fragment\toast.html" />
+    <Content Include="Content\weui-master\src\example\images\icon_nav_actionSheet.png" />
+    <Content Include="Content\weui-master\src\example\images\icon_nav_article.png" />
+    <Content Include="Content\weui-master\src\example\images\icon_nav_button.png" />
+    <Content Include="Content\weui-master\src\example\images\icon_nav_cell.png" />
+    <Content Include="Content\weui-master\src\example\images\icon_nav_dialog.png" />
+    <Content Include="Content\weui-master\src\example\images\icon_nav_icons.png" />
+    <Content Include="Content\weui-master\src\example\images\icon_nav_msg.png" />
+    <Content Include="Content\weui-master\src\example\images\icon_nav_toast.png" />
+    <Content Include="Content\weui-master\src\example\images\vcode.jpg" />
+    <Content Include="Content\weui-master\src\example\index.html" />
+    <Content Include="Content\weui-master\src\example\snapshot\button.png" />
+    <Content Include="Content\weui-master\src\example\snapshot\cell.png" />
+    <Content Include="Content\weui-master\src\example\snapshot\dialog1.png" />
+    <Content Include="Content\weui-master\src\example\snapshot\dialog2.png" />
+    <Content Include="Content\weui-master\src\example\snapshot\grid.png" />
+    <Content Include="Content\weui-master\src\example\snapshot\icons.png" />
+    <Content Include="Content\weui-master\src\example\snapshot\progress.png" />
+    <Content Include="Content\weui-master\src\example\snapshot\qrcode.png" />
+    <Content Include="Content\weui-master\src\example\snapshot\result.png" />
+    <Content Include="Content\weui-master\src\example\snapshot\text.png" />
+    <Content Include="Content\weui-master\src\example\snapshot\toast1.png" />
+    <Content Include="Content\weui-master\src\example\snapshot\toast2.png" />
+    <Content Include="Content\weui-master\src\example\zepto.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\0.jpg" />
+    <Content Include="images\at_32x32.png" />
+    <Content Include="images\bankLogo.jpg" />
+    <Content Include="images\bankLogo_checked.jpg" />
+    <Content Include="images\mendian.jpg" />
+    <Content Include="images\saoyisao.png" />
+    <Content Include="images\weixin.png" />
+    <Content Include="images\weixi_text.png" />
+    <Content Include="images\WePayLogo.png" />
+    <Content Include="images\WePayLogo_checked.png" />
+    <Content Include="images\zhifubao_logo.jpg" />
+    <Content Include="images\zhifubao_logo_checked.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\areaDemo\Views\web.config" />
+    <Content Include="Areas\areaDemo\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\areaDemo\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\areaDemo\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area12\Views\web.config" />
+    <Content Include="Areas\area12\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area12\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area12\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area12\Views\jsapiPay\Index.cshtml" />
+    <Content Include="Areas\area1\Views\web.config" />
+    <Content Include="Areas\area1\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area1\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area1\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area2\Views\web.config" />
+    <Content Include="Areas\area2\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area2\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area2\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area3\Views\web.config" />
+    <Content Include="Areas\area3\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area3\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area3\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area4\Views\web.config" />
+    <Content Include="Areas\area4\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area4\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area4\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area5\Views\web.config" />
+    <Content Include="Areas\area5\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area5\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area5\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area6\Views\web.config" />
+    <Content Include="Areas\area6\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area6\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area6\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area7\Views\web.config" />
+    <Content Include="Areas\area7\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area7\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area7\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area8\Views\web.config" />
+    <Content Include="Areas\area8\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area8\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area8\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area9\Views\web.config" />
+    <Content Include="Areas\area9\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area9\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area9\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area10\Views\web.config" />
+    <Content Include="Areas\area10\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area10\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area10\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area7\Views\Kefu\Index.cshtml" />
+    <Content Include="Areas\area10\Views\WeixinJSBridge\Index.cshtml" />
+    <Content Include="Areas\area11\Views\web.config" />
+    <Content Include="Areas\area11\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\area11\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\area11\Views\Home\Index.cshtml" />
+    <Content Include="Areas\area11\Views\addpoi\uploadimg.cshtml" />
+    <Content Include="Areas\area11\Views\addpoi\Upload_poiimg.cshtml" />
+    <Content Include="Areas\area11\Views\addpoi\Index.cshtml" />
+    <Content Include="Areas\area11\Views\addpoi\save.cshtml" />
+    <Content Include="Areas\area10\Views\WeixinJSBridge2\Index.cshtml" />
+    <Content Include="Areas\area11\Views\Home\viewinfo.cshtml" />
+    <Content Include="Areas\area2\Views\RenderSection\Index.cshtml" />
+    <Content Include="Areas\area4\Views\menu\Index.cshtml" />
+    <Content Include="Areas\area4\Views\menu\Create.cshtml" />
+    <Content Include="Areas\area4\Views\menu\Get.cshtml" />
+    <Content Include="Areas\area4\Views\menu\delete.cshtml" />
+    <Content Include="Areas\area4\Views\menu\GetConfig.cshtml" />
+    <Content Include="Areas\area4\Views\menu\addconditional.cshtml" />
+    <Content Include="Areas\area3\Views\Home\get_access_token.cshtml" />
+    <Content Include="Areas\area4\Views\menu\trymatch.cshtml" />
+    <Content Include="Areas\area3\Views\Home\getcallbackip.cshtml" />
+    <Content Include="Areas\area8\Views\uploadmedia\Index.cshtml" />
+    <Content Include="Areas\area8\Views\uploadmedia\Upload.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getusersummary.cshtml" />
+    <Content Include="Areas\area9\Views\DataCube\getusersummary.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getusercumulate.cshtml" />
+    <Content Include="Areas\area9\Views\DataCube\getusercumulate.cshtml" />
+    <Content Include="Areas\area8\Views\getmedia\Index.cshtml" />
+    <Content Include="Areas\area8\Views\getmedia\Get.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getarticlesummary.cshtml" />
+    <Content Include="Areas\area7\Views\kfaccount_add\Index.cshtml" />
+    <Content Include="Areas\area7\Views\kfaccount_add\add.cshtml" />
+    <Content Include="Areas\area7\Views\kfaccount_edit\Index.cshtml" />
+    <Content Include="Areas\area7\Views\kfaccount_edit\update.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getarticletotal.cshtml" />
+    <Content Include="Areas\area6\Views\Home\addgroup.cshtml" />
+    <Content Include="Areas\area8\Views\Uploadthumb\Index.cshtml" />
+    <Content Include="Areas\area7\Views\kfaccount_delete\Index.cshtml" />
+    <Content Include="Areas\area7\Views\Upload_headimg\Index.cshtml" />
+    <Content Include="Areas\area9\Views\getuserread\Index.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getuserread.cshtml" />
+    <Content Include="Areas\area9\Views\DataCube\getuserread.cshtml" />
+    <Content Include="Areas\area6\Views\Home\editgroup.cshtml" />
+    <Content Include="Areas\area6\Views\Home\modifygroup.cshtml" />
+    <Content Include="Areas\area8\Views\add_news\Index.cshtml" />
+    <Content Include="Areas\area8\Views\Upload_newsimg\Index.cshtml" />
+    <Content Include="Areas\area6\Views\Home\get_users.cshtml" />
+    <Content Include="Areas\area8\Views\add_material\Index.cshtml" />
+    <Content Include="Areas\area8\Views\Home\add_material.cshtml" />
+    <Content Include="Areas\area6\Views\Home\Remark.cshtml" />
+    <Content Include="Areas\area8\Views\Get_Material\Index.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getuserreadhour.cshtml" />
+    <Content Include="Areas\area6\Views\Home\updatemembers.cshtml" />
+    <Content Include="Areas\area5\Views\Home\sendall.cshtml" />
+    <Content Include="Areas\area8\Views\del_material\Index.cshtml" />
+    <Content Include="Areas\area8\Views\Home\delete.cshtml" />
+    <Content Include="Areas\area6\Views\Home\GetGroupId.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getusershare.cshtml" />
+    <Content Include="Areas\area5\Views\Home\get_industry.cshtml" />
+    <Content Include="Areas\area6\Views\Home\batchupdate.cshtml" />
+    <Content Include="Areas\area5\Views\Home\set_industry.cshtml" />
+    <Content Include="Areas\area5\Views\Home\api_add_template.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getusersharehour.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getupstreammsg.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getupstreammsgmonth.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getupstreammsgweek.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getupstreammsghour.cshtml" />
+    <Content Include="Areas\area10\Views\jQueryMobile\Index.cshtml" />
+    <Content Include="Areas\area8\Views\Home\get_materialcount.cshtml" />
+    <Content Include="Areas\area8\Views\Home\batchget_material.cshtml" />
+    <Content Include="Areas\area8\Views\Upload_newsimg\Upload.cshtml" />
+    <Content Include="Areas\area10\Views\CssSample\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_3\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_4\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_5\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_6\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_7\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_8\Index.cshtml" />
+    <Content Include="Content\.gitignore" />
+    <Content Include="Content\.travis.yml" />
+    <Content Include="Content\bower.json" />
+    <Content Include="Content\CHANGELOG.md" />
+    <Content Include="Content\package.json" />
+    <Content Include="Content\README.md" />
+    <Content Include="Content\weui-master\.gitignore" />
+    <Content Include="Content\weui-master\.travis.yml" />
+    <Content Include="Content\weui-master\bower.json" />
+    <Content Include="Content\weui-master\CHANGELOG.md" />
+    <Content Include="Content\weui-master\package.json" />
+    <Content Include="Content\weui-master\README.md" />
+    <Content Include="Content\weui-master\src\example\example.less" />
+    <Content Include="Content\weui-master\src\style\base\fn.less" />
+    <Content Include="Content\weui-master\src\style\base\mixin\mobile.less" />
+    <Content Include="Content\weui-master\src\style\base\mixin\setArrow.less" />
+    <Content Include="Content\weui-master\src\style\base\mixin\setChecked.less" />
+    <Content Include="Content\weui-master\src\style\base\mixin\setOnepx.less" />
+    <Content Include="Content\weui-master\src\style\base\mixin\text.less" />
+    <Content Include="Content\weui-master\src\style\base\reset.less" />
+    <Content Include="Content\weui-master\src\style\base\variable\global.less" />
+    <Content Include="Content\weui-master\src\style\base\variable\monokai.less" />
+    <Content Include="Content\weui-master\src\style\base\variable\weui_button.less" />
+    <Content Include="Content\weui-master\src\style\base\variable\weui_cell.less" />
+    <Content Include="Content\weui-master\src\style\base\variable\weui_grid.less" />
+    <Content Include="Content\weui-master\src\style\base\variable\weui_msg.less" />
+    <Content Include="Content\weui-master\src\style\base\variable\weui_progress.less" />
+    <Content Include="Content\weui-master\src\style\icon\weui_font.less" />
+    <Content Include="Content\weui-master\src\style\icon\weui_icon_font.less" />
+    <Content Include="Content\weui-master\src\style\weui.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_button\weui_btn_default.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_button\weui_btn_disabled.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_button\weui_btn_global.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_button\weui_btn_plain.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_button\weui_btn_primary.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_button\weui_btn_warn.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_button\weui_button.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_access.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_cell_global.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_check.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_check\weui_checkbox.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_check\weui_check_common.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_check\weui_radio.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_form.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_form\weui_form_common.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_form\weui_select.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_form\weui_select_after.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_form\weui_select_before.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_form\weui_vcode.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_switch.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_cell\weui_uploader.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_grid\weui_grid.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_page\weui_article.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_page\weui_msg.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_progress\weui_progress.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_tips\weui_actionsheet.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_tips\weui_dialog.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_tips\weui_mask.less" />
+    <Content Include="Content\weui-master\src\style\widget\weui_tips\weui_toast.less" />
+    <Content Include="Areas\area10\Views\Sample10_9\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_10\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_11\Index.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getupstreammsgdist.cshtml" />
+    <Content Include="Areas\area9\Views\DataCube\getupstreammsgdist.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getupstreammsgdistmonth.cshtml" />
+    <Content Include="Areas\area9\Views\Home\getupstreammsgdistweek.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_12\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_13\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_14\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_15\Index.cshtml" />
+    <Content Include="Areas\area10\Views\Sample10_16\Index.cshtml" />
+    <Content Include="Areas\area10\Views\JsSdk\Index.cshtml" />
+    <Content Include="Areas\area10\Views\JsSdk\jssdk_demo.cshtml" />
+    <Content Include="Areas\area12\Views\Home\sendredpack.cshtml" />
+    <Content Include="Areas\area12\Views\scanPay\Index.cshtml" />
+    <Content Include="Areas\area12\Views\Home\ScanQRCodeImage.cshtml" />
+    <Content Include="Areas\area12\Views\Home\redpack.cshtml" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
+    <None Include="Properties\PublishProfiles\mvc.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\dcalendar.picker.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.signalR-1.1.4.js" />
+    <Content Include="Scripts\jquery.signalR-1.1.4.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jssdk.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\echo\Index.cshtml" />
+    <Content Include="Views\Media\Index.cshtml" />
+    <Content Include="Views\Home\get_access_token.cshtml" />
+    <Content Include="Views\Home\GetCallbackip.cshtml" />
+    <Content Include="Views\Media\Upload.cshtml" />
+    <Content Include="Views\Media\Get.cshtml" />
+    <Content Include="Views\Menu1\Index.cshtml" />
+    <Content Include="Views\Menu1\Create.cshtml" />
+    <Content Include="Views\Menu1\Get.cshtml" />
+    <Content Include="Views\Media\add_news.cshtml" />
+    <Content Include="Views\Menu1\delete.cshtml" />
+    <Content Include="Views\Menu1\GetConfig.cshtml" />
+    <Content Include="Views\Media\Upload_thumb.cshtml" />
+    <Content Include="Views\Menu1\addconditional.cshtml" />
+    <Content Include="Views\Menu1\delconditional.cshtml" />
+    <Content Include="Views\Menu1\trymatch.cshtml" />
+    <Content Include="Views\Auth2\Index.cshtml" />
+    <Content Include="Views\Media\add_material.cshtml" />
+    <Content Include="Views\Media\update_News.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Datacube\Index.cshtml" />
+    <Content Include="Views\Datacube\getusersummary.cshtml" />
+    <Content Include="Views\Media\get_materialcount.cshtml" />
+    <Content Include="Views\Datacube\getusercumulate.cshtml" />
+    <Content Include="Views\Users\get_groups.cshtml" />
+    <Content Include="Views\Media\batchget_material.cshtml" />
+    <Content Include="Views\Users\modifygroup.cshtml" />
+    <Content Include="Views\Datacube\getuserread.cshtml" />
+    <Content Include="Views\Datacube\getusershare.cshtml" />
+    <Content Include="Views\Users\deletegroup.cshtml" />
+    <Content Include="Views\DatacubeMsg\Index.cshtml" />
+    <Content Include="Views\test\Index.cshtml" />
+    <Content Include="Views\DatacubeMsg1\Index.cshtml" />
+    <Content Include="Views\Message\Index.cshtml" />
+    <Content Include="Views\Message\sendall.cshtml" />
+    <Content Include="Views\Users\get_users.cshtml" />
+    <Content Include="Views\Users\SetRemark.cshtml" />
+    <Content Include="Views\chp1\Index.cshtml" />
+    <Content Include="Views\Users\get_industry.cshtml" />
+    <Content Include="Views\Datacube\getupstreammsg.cshtml" />
+    <Content Include="Views\Message\SendtextByOpenids.cshtml" />
+    <Content Include="Views\Datacube\getupstreammsgmonth.cshtml" />
+    <Content Include="Views\chp2\Index.cshtml" />
+    <Content Include="Views\Kefu\Index.cshtml" />
+    <Content Include="Views\Kefu\getkflist.cshtml" />
+    <Content Include="Views\poi\Index.cshtml" />
+    <Content Include="Views\Datacube\getupstreammsgdistweek.cshtml" />
+    <Content Include="Views\poi\uploadimg.cshtml" />
+    <Content Include="Views\poi\Upload_poiimg.cshtml" />
+    <Content Include="Views\Chp3\Index.cshtml" />
+    <Content Include="Views\Chp3\getcallbackip.cshtml" />
+    <Content Include="Views\Chp3\get_access_token.cshtml" />
+    <Content Include="Views\poi\getpoilist.cshtml" />
+    <Content Include="Views\poi\update.cshtml" />
+    <Content Include="Views\JsSdk\Index.cshtml" />
+    <Content Include="Views\JsSdk\getticket.cshtml" />
+    <Content Include="Views\Chp4\Index.cshtml" />
+    <Content Include="Views\Chp10\Index.cshtml" />
+    <Content Include="Views\JsSdk\jssdk_demo.cshtml" />
+    <Content Include="Views\poi\viewinfo.cshtml" />
+    <Content Include="Views\poi\addcard.cshtml" />
+    <Content Include="Views\poi\savecard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\area10\Models\" />
+    <Folder Include="Areas\area11\Models\" />
+    <Folder Include="Areas\area12\Models\" />
+    <Folder Include="Areas\area1\Models\" />
+    <Folder Include="Areas\area2\Models\" />
+    <Folder Include="Areas\area2\Views\Hello\" />
+    <Folder Include="Areas\area3\Models\" />
+    <Folder Include="Areas\area4\Models\" />
+    <Folder Include="Areas\area5\Models\" />
+    <Folder Include="Areas\area5\Views\industry\" />
+    <Folder Include="Areas\area5\Views\Template\" />
+    <Folder Include="Areas\area6\Models\" />
+    <Folder Include="Areas\area6\Views\GetGroupId\" />
+    <Folder Include="Areas\area6\Views\usergroup\" />
+    <Folder Include="Areas\area7\Models\" />
+    <Folder Include="Areas\area8\Models\" />
+    <Folder Include="Areas\area9\Models\" />
+    <Folder Include="Areas\areaDemo\Models\" />
+    <Folder Include="Views\Chp11\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54432</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54432/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

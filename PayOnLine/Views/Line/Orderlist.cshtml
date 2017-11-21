@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    @*<link href="~/Content/orderlist.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/DC.jquery.Core.min.js"></script>
+    <script src="~/Scripts/DC.jquery.Repeater.min.js"></script>*@
+@*    <script type="text/javascript">
+    jQuery(function ($) {
+        limit = 10;  // 每页记录数
+        $('#repeater1').Repeater('@Url.Action("LoadOrders", "Home")', '@Url.Action("GetOrderCount", "Home")', limit, null);
+
+
+        })
+
+    </script>*@
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Orderlist123</title>
+</head>
+<body>
+    <div id="divtitle">我的订单</div>
+    <div style="text-align:center; margin: 10px auto 0 auto;width:100%; ">
+        <table id='repeater1' border="1">
+            <thead>
+                <tr><td>订单号</td><td>产品编号</td><td>产品名称</td><td>单价</td><td>数量</td><td>提交时间</td><td>实付金额</td><td>付款时间</td><td>交易流水号</td><td>支付类型</td><td>支付状态</td></tr>
+            </thead>
+            <tbody>
+                <tr class="itemtemplate"><td>{orderno}</td><td>{product_code}</td><td>{product_name}</td><td>{price}</td><td>{num}</td><td>{submittime}</td><td>{cash_fee}</td><td>{paytime}</td><td>{transaction_id}</td><td>{paytype}</td><td>{paystate}</td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿
+
+.little_content{
+    font-family:微软雅黑;
+    font-size:small;
+    color:#474747;
+    height:30px;
+    line-height:30px;
+    margin:0px 10px 0 10px;
+}
+
+#pay_box{
+    width:100%;
+    float:left;
+    height:50px;
+}
+
+#btnPay{
+    display:block;
+    width:150px;
+    height:50px;
+    background-color:#ff6a00;
+    font-family:微软雅黑;
+    font-size: 26px;
+    color:#ffffff;
+    margin:30px auto 10px auto;
+    text-align:center;
+    padding:5px 0 0 0 ;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+
+.little_title{
+    font-family:微软雅黑;
+    font-size:small;
+    font-weight:bold;
+    color:#474747;
+    height:30px;
+    line-height:30px;
+    margin:0px 10px 0 10px;
+}
+
+.required_info
+{
+    font-family:微软雅黑;
+    font-size:small;
+    color :#ff0000;
+    display:none;
+    margin-top:60px;
+    margin-left:30px;
+}

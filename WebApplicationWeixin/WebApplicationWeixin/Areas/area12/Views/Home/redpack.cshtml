@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "sendredpack";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+<link href="~/Content/style.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+        $(function () {
+            $("#btn_sendredpack").click(function () {
+                $.ajax({
+                    type: "post", //URL方式为POST
+                    url: '@Url.Action("sendredpack", "Home")', //这里是指向兑奖验证的页面
+                    data: 'openId=@ViewBag.OpenId&amount=100', //把要验证的参数传过去
+                    dataType: 'json', //数据类型为JSON格式的验证
+                    success: function (data) {
+                        alert(data);
+                    },
+                    error: function () {
+                        return false;
+                    }
+                });
+            });
+        });
+</script>
+<h2>sendredpack</h2>
+
+<button class="btn btn_primary" id="btn_sendredpack" style="margin-top:50%;margin-bottom:50%;">我要领取现金红包</button>

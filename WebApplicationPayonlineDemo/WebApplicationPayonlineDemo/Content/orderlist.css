@@ -1,0 +1,12 @@
+﻿body {
+    text-align:center
+}
+#divtitle{
+    margin: 10px auto 10px auto;
+    font-family:微软雅黑;
+    font-size:medium;
+    color:#808080;
+}
+#repeater1{
+    margin: 10px auto 10px auto;
+}

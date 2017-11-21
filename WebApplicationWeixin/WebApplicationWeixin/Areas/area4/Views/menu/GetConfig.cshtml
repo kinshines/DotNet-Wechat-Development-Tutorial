@@ -1,0 +1,34 @@
+﻿@model wxBase.Model.Menu.wxModelMenuConfig
+
+@{
+    ViewBag.Title = "GetConfig";
+}
+<h2>GetConfig</h2>
+<br />
+<p>is_menu_open: @Model.is_menu_open</p><br />
+<p>菜单按钮数量: @Model.selfmenu_info.button.Count</p><br />
+<ul>
+    @foreach (var item in @Model.selfmenu_info.button)
+    {
+        <li><p>type: @item.type</p></li>
+        <li><p>key: @item.key</p></li>
+        <li><p>name: @item.name</p></li>
+        <li><p>url: @item.url</p></li>
+        <li><p>value: @item.value</p></li>
+
+        wxBase.Model.Menu.wxModelMenuSubButtons sub_buttons = item.sub_button;
+        <ul>
+            @if (sub_buttons != null)
+            {
+                foreach (var subitem in sub_buttons.list)
+                {
+                    <li><p>type: @subitem.type</p></li>
+                    <li><p>key: @subitem.key</p></li>
+                    <li><p>name: @subitem.name</p></li>
+                    <li><p>url: @subitem.url</p></li>
+                }
+            }
+        </ul>
+    }
+
+</ul>

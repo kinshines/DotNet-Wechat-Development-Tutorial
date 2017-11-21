@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "在线支付demo";
+}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="~/Content/pay.css" rel="stylesheet" />
+<link href="~/Scripts/themes/default/easyui.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.easyui.min.js"></script>
+<script src="~/Scripts/yxw.numberbox.min.js"></script>
+<script src="~/Scripts/yxw.loading.js"></script>
+<script type="text/javascript">
+    jQuery(function ($) {
+        $("#txtPrice").mynumberbox({ minvalue: 0.01, presion: 2, maxvalue: 100 });
+        $("#txtNum").mynumberbox({ minvalue: 1, presion: 0, maxvalue: 100 });
+        $("#btnPay").click(function () {
+            if (!$("#formpay").form('validate'))
+                return;
+
+            paytype = $("#hi_paytype").val();
+            //  alert($("#hi_paytype").val());
+            if (paytype == "")
+            {
+                $("#requird_pay").show();
+                return;
+            }
+            else {
+                $("#requird_pay").hide();
+            }
+            $.loading();
+
+            window.location = '@Url.Action("Pay", "Home")' + '?cpcode=' + $("#txtProductCode").val()
+                    + '&cpname=' + $("#txtProductName").val()
+                    + '&cpdesc=' + $("#txtDesc").val() + '&price=' + $("#txtPrice").val() + '&num=' + $("#txtNum").val() + '&paytype=' + paytype;
+        });
+
+        $("#zhifubao_box").click(function () {
+            $("#zhifubao_box").css("background-image", "url('/images/zhifubao_logo_checked.jpg')");
+
+            $("#weixinpay_box").css("background-image", "url(/images/WePayLogo.png)");
+            $("#bank_box").css("background-image", "url(/images/bankLogo.jpg)");
+            $("#hi_paytype").val("1");
+        })
+        $("#weixinpay_box").click(function () {
+            $(this).css("background-image", "url(/images/WePayLogo_checked.png)");
+            $("#zhifubao_box").css("background-image", "url(/images/zhifubao_logo.jpg)");
+            $("#bank_box").css("background-image", "url(/images/bankLogo.jpg)");
+            $("#hi_paytype").val("2");
+        });
+        $("#bank_box").click(function () {
+            $(this).css("background-image", "url('/images/bankLogo_checked.jpg')");
+
+            $("#zhifubao_box").css("background-image", "url(/images/zhifubao_logo.jpg)");
+            $("#weixinpay_box").css("background-image", "url(/images/WePayLogo.png)");
+            $("#hi_paytype").val("3");
+        })
+
+    });
+</script>
+
+<form id="formpay" method="post">
+    <div id="orderbox">
+        <table border="0" width="1000" cellpadding="5" cellspacing="5" style="margin:0;padding:0;">
+            <tr>
+                <td width="150"></td>
+                <td width="100" align="left"><a class="little_title">产品编号:</a></td>
+                <td width="600" align="left"><input id="txtProductCode" name="txtProductCode" type="text" class="easyui-validatebox  textbox" value="CP-000001" data-options="required:true, missingMessage:'必填项'"></td>
+            </tr>
+            <tr>
+                <td width="150"></td>
+                <td width="100" align="left"><a class="little_title">产品名:</a></td>
+                <td align="left"><input id="txtProductName" name="txtProductName" type="text" class="easyui-validatebox  textbox" value="游学网测试支付产品" data-options="required:true, missingMessage:'必填项'"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td align="left"><a class="little_title">产品描述:</a></td>
+                <td align="left"><input id="txtDesc" name="txtDesc" type="text" class="easyui-validatebox  textbox" value="本产品用于测试游学网支付功能" data-options="required:true, missingMessage:'必填项'" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td align="left"><a class="little_title">价格:</a></td>
+                <td align="left">
+                    <input input id="txtPrice" name="txtPrice" type="text" class="easyui-validatebox" data-options="required:true, missingMessage:'必填项'"
+                          value="0.01">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td align="left"><a class="little_title">数量:</a></td>
+                <td align="left"><input id="txtNum" name="txtNum" type="text" value="1" class="easyui-validatebox" data-options="required:true, missingMessage:'必填项'" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td align="left"><a class="little_title">支付方式:</a><br><p id="requird_pay" class="required_info">***请选择</p></td>
+                <td align="left" valign="middle">
+                    <div id="zhifubao_box"></div>
+                    <div id="weixinpay_box"></div>                    
+                    <div id="bank_box"></div>
+</td>
+            </tr>
+        </table>
+    </div>
+
+    <input type="hidden" id="hi_paytype" value="" />
+
+    <div id="pay_box"><a id="btnPay">立即支付</a> </></div>
+</form>

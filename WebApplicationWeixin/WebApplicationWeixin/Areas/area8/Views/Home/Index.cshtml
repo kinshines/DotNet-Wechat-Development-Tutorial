@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "第8章 素材管理";
+}
+<br /><br /><br /><br /><br />
+
+<h2>第8章 素材管理</h2>
+
+<br /><br /><br /><br /><br />
+<ul>
+    <li>@Html.ActionLink("8.1.1　新增临时素材","Index", "uploadmedia",  new { area = "area8" }, null) </li>
+    <li>@Html.ActionLink("8.1.2  获取临时素材", "Index", "getmedia", new { area = "area8" }, null) </li>
+    <li>@Html.ActionLink("8.2.1　新增永久图文素材", "Index", "add_news", new { area = "area8" }, null) </li>
+    <li>@Html.ActionLink("【例8-5】  上传永久图文素材内容图", "Index", "Upload_newsimg", new { area = "area8" }, null) </li>
+    <li>@Html.ActionLink("【例8-6】  上传永久素材图片", "Index", "add_material", new { area = "area8" }, null) </li>
+    <li>@Html.ActionLink("【例8-7】  获取永久素材", "Index", "Get_Material", new { area = "area8" }, null) </li>
+    <li>@Html.ActionLink("【例8-8】  删除永久素材图片", "Index", "del_material", new { area = "area8" }, null) </li>
+    <li>@Html.ActionLink("【例8-9】  获取素材总数", "get_materialcount")</li>      
+    <li>@Html.ActionLink("【例8-10】  获取素材列表", "batchget_material")</li>       
+</ul>

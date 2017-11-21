@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Remark";
+}
+
+<h2>设置用户备注名</h2>
+
+@using (Html.BeginForm("SetRemark", "Home", FormMethod.Post))
+{
+    <a>输入用户openid</a><input type="text" name="openid" />
+    <a>输入用户的备注名</a><input type="text" name="remark" />
+    <input type="submit" value="提交" />
+}
+
+
+

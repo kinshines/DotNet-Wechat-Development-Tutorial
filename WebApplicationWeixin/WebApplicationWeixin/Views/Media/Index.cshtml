@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>上传临时素材</h2>
+
+@using (Html.BeginForm("Upload", "Media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>选择上传文件：</p><input name="file" type="file" id="file" />
+        <br />
+        <br />
+        <input type="submit" name="Upload" value="上传" />
+}
+        <div style="width:100%;border:1px solid red; height:100px;">
+ @using (Html.BeginForm("Get", "Media", FormMethod.Post))
+ {
+                <a>输入media id:</a><input name="Mediaid" type="text" />
+                <input type="submit" value="获取">
+  }
+            </div>
+
+@using (Html.BeginForm("add_material", "Media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>选择上传永久素材文件：</p><input name="file" type="file" id="file" />
+    <br />
+        <br />
+        <input type="submit" name="Upload" value="上传" />
+}
+<div style="width:100%;border:1px solid red; height:100px;">
+    @Html.ActionLink("新增永久图文素材", "add_news")    
+</div>
+
+
+<h2>上传永久图文素材封面图</h2>
+@using (Html.BeginForm("Upload_thumb", "Media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>选择上传文件：</p><input name="file_thumb" type="file" id="file_thumb" />
+    <br />
+        <br />
+        <input type="submit" name="Upload_thumb" value="上传" />
+}
+
+<h2>上传永久图文素材内容图</h2>
+@using (Html.BeginForm("Upload_newsimg", "Media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>选择上传文件：</p><input name="file_newsimg" type="file" id="file_newsimg" />
+    <br />
+    <br />
+        <input type="submit" name="Upload_newsimg" value="上传" />
+}
+
+<h2>上传永久素材图片</h2>
+@using (Html.BeginForm("add_material", "Media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>选择上传文件：</p><input type="file" id="add_material" name="add_material" />
+    <br /><br />
+    <input type="submit" value="上传" />
+}
+<h2>获取永久素材图片</h2>
+
+<div style="width:100%;border:1px solid red; height:100px;">
+    @using (Html.BeginForm("Get_Material", "Media", FormMethod.Post))
+    {
+        <a>输入media id:</a><input name="Mediaid" type="text" />
+                <input type="submit" value="获取">
+    }
+</div>
+
+<h2>删除永久素材</h2>
+
+<div style="width:100%;border:1px solid red; height:100px;">
+    @using (Html.BeginForm("delete", "Media", FormMethod.Post))
+    {
+        <a>输入media id:</a><input name="Mediaid" type="text" />
+        <input type="submit" value="删除">
+    }
+    </div>
+
+    <ul>
+        <li>@Html.ActionLink("获取素材总数", "get_materialcount", "Media")</li>
+        <li>@Html.ActionLink("获取素材列表", "batchget_material", "Media")
+    </li>
+
+    </ul>

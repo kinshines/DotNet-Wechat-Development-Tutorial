@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "获取用户统计数据";
+}
+
+<h2>获取用户增减数据</h2>
+
+
+@using (Html.BeginForm("getusersummary", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text"/><a>~</a><input name="enddate" type="text" />
+        <input type="submit" value="统计" />
+}
+
+<h2>获取用户累计数据</h2>
+
+
+@using (Html.BeginForm("getusercumulate", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+<br/><br /><br /><br /><br />
+
+
+<h2>获取获取图文群发总数据</h2>
+@using (Html.BeginForm("getarticletotal", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+
+<h2>获取图文群发每日数据</h2>
+@using (Html.BeginForm("getarticlesummary", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+
+<h2>获取获取图文统计数据</h2>
+@using (Html.BeginForm("getuserread", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+<h2>图文统计分时数据</h2>
+@using (Html.BeginForm("getuserreadhour", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+<h2>图文分享转发数据</h2>
+@using (Html.BeginForm("getusershare", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+
+<h2>获取消息发送概况数据</h2>
+@using (Html.BeginForm("getupstreammsg", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+
+<h2>获取获取消息发送月数据</h2>
+@using (Html.BeginForm("getupstreammsgmonth", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+<h2>获取获取消息发送周数据</h2>
+@using (Html.BeginForm("getupstreammsgweek", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+<h2>获取获取消息发送分时数据</h2>
+@using (Html.BeginForm("getupstreammsghour", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+<h2>获取获取消息发送分布数据</h2>
+@using (Html.BeginForm("getupstreammsgdist", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+<h2>获取获取消息发送分布月数据</h2>
+@using (Html.BeginForm("getupstreammsgdistmonth", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+<h2>获取获取消息发送分布周数据</h2>
+@using (Html.BeginForm("getupstreammsgdistweek", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}

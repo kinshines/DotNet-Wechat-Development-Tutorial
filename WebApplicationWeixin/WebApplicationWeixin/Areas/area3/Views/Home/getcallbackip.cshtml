@@ -1,0 +1,14 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "getcallbackip";
+    Layout = null;
+}
+
+<h2>微信服务器IP地址如下</h2>
+<br/><br/>
+<ul>
+    @for (int i = 0; i < @Model.Count; i++)
+    {
+        <li> @Model[i]</li>
+    }
+</ul>

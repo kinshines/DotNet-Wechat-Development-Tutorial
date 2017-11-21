@@ -1,0 +1,183 @@
+﻿@{
+    ViewBag.Title = "在线支付";
+    List<youxuewangGenerated.Tables.Ht_version> listver = ViewBag.Version as List<youxuewangGenerated.Tables.Ht_version>;
+    var listbd = ViewBag.Baodan;
+    var listbd1 = ViewBag.Baodan1;
+    var htidht = ViewData["htid"];
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <title>在线支付</title>
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <link href="~/Content/css/index.css" rel="stylesheet" />
+    <link href="~/Content/css/pay.css" rel="stylesheet" />
+    <script src="~/Scripts/yxw.loading.js"></script>
+    <script src="~/Scripts/jquery.easyui.min.js"></script>
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $("#qianyue").click(function () {
+                paytype = $("#hi_paytype").val();
+                //alert($("#hi_paytype").val());
+                if (paytype == "") {
+                    $("#requird_pay").show();
+                    return;
+                }
+                else {
+                    $("#requird_pay").hide();
+                }
+                $.loading();
+                //alert($("#txtProductName").text());
+                //+$("#price").text()
+                //alert($("#fontsize").text());
+                window.location = '@Url.Action("Pay", "line")' + '?cpname=' + $("#txtProductName").text()
+                    + '&cpdesc=备注产品' + '&price=' + $("#price").text() + '&num=1' + '&paytype=' + paytype + '&sumprice=' + $("#fontsize").text() + '&htid=' + $("#Hidden1").val();
+            });
+
+            $("#zhuxiao").click(function () {
+                window.location = '@Url.Action("Zhuxiao", "line")' + '?count=1';
+            });
+
+            $("#zhifubao_box").click(function () {
+                $("#zhifubao_box").css("background-image", "url('/Images/zhifubao_logo_checked.jpg')");
+
+                $("#weixinpay_box").css("background-image", "url(/Images/WePayLogo.png)");
+                $("#hi_paytype").val("1");
+            })
+            $("#weixinpay_box").click(function () {
+                $(this).css("background-image", "url(/Images/WePayLogo_checked.png)");
+                $("#zhifubao_box").css("background-image", "url(/Images/zhifubao_logo.jpg)");
+                $("#hi_paytype").val("2");
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="bgdiv">
+        <div class="secondDiv">
+            <img id="logo" src="~/Images/logo.png" />
+            <img id="time" src="~/Images/43.jpg" />
+            <div class="firstBlueDiv"></div>
+            @foreach (var item in listver)
+            {
+                <div class="titleName" id="txtProductName"><span>@item.name</span></div>
+                <table>
+                    <tr>
+                        <td>学生价：</td>
+                        <td class="table_td"><span id="price">@item.studentprice</span>元/人</td>
+                        <td>成人价：</td>
+                            <td class="table_td"><span id="price1">@item.adultprice</span>元/人</td>
+                    </tr>
+                    <tr>
+                        <td>活动部门：</td>
+                        <td class="table_td">@item.orgnames</td>
+                        <td>活动人群：</td>
+                        <td class="table_td">@item.hdrq</td>
+                    </tr>
+                    <tr>
+                        <td>活动班级数：</td>
+                        <td class="table_td">@item.classcount</td>
+                        <td>活动人数：</td>
+                        <td class="table_td">@{
+                int a = item.adultcount;
+                int b = item.studentcount;
+                int c = a + b;
+                        }@c 人</td>
+                    </tr>
+                    <tr>
+                        <td>出发日期：</td>
+                        <td class="table_td">@{
+                string set = item.setoutdate;
+                set = set.Substring(0, 10);
+                        }@set</td>
+                        <td>返回日期：</td>
+                        <td class="table_td">@{
+                string back = item.backdate;
+                back = back.Substring(0, 10);
+                        }@back</td>
+                    </tr>
+                </table>
+                <div class="chuyou">
+                    <div class="chuyou_xian1"></div>
+                    <div class="chuyou_font"><span>在线支付</span></div>
+                    <div class="chuyou_xian2"></div>
+                </div>
+
+                    @*<div class="fujian">
+                                        <div class="fujiansize"><span>支付方式选择</span></div>
+                                        <div class="paymoney">
+                        
+                                        </div>
+                                        <div class="fujianhead"></div>
+                                    </div>*@
+            
+            <div>
+                <table>
+                    <tr style="margin-top:10px;">
+                        <td>
+                            <span style="font-size: 16px; margin-top: 12px;">支付对象：</span>
+                            <span style="font-size: 16px; margin-top: 12px;"><b>@ViewData["classname"]</b></span>
+                            <span style="font-size: 16px; margin-top: 12px;"><b>@ViewData["username"]</b></span>
+                            <span style="font-size: 16px; margin-top: 12px;">&nbsp;&nbsp;(如不正确，请您 “<input type="button" value="注销" id="zhuxiao" style="border: none; font-size: 16px; color: #f60;background:none;" />” ,重新登录)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-size: 16px; margin-top: 12px;">支付金额：</span>
+                            <span>支付<span id="fontsize">
+                                @{
+                                    double stuprice = item.studentprice;
+                                    double adprice = item.adultprice;
+                                    double stusum = 0;
+                                    double adsum = 0;
+                                    if (listbd > 0)
+                                    {
+                                        stusum = stuprice * listbd;
+                                    }
+                                    else
+                                    {
+                                        listbd = 0;
+                                    }
+                                    if (listbd1 > 0)
+                                    {
+                                        adsum = adprice * listbd1;
+                                    }
+                                    else
+                                    {
+                                        listbd1 = 0;
+                                    }
+
+                                    double sum = stusum + adsum;
+                                }@sum </span>元（学生 @listbd 人，成人 @listbd1 人）</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-size: 16px; margin-top: 12px;">支付方式选择：</span>
+                        </td>
+                        <td>
+                            <div id="zhifubao_box"></div>
+                            <div id="weixinpay_box"></div>
+                        </td>
+                        <td>
+                            <p id="requird_pay" class="required_info">**请选择支付方式**</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            }
+            <input type="hidden" id="hi_paytype" value="" />
+            <div class="qianyue">
+                <input id="qianyue" type="submit" value="付款" />
+            </div>
+            <div class="zhanwei"></div>
+        </div>
+        <input id="Hidden1" type="hidden" value="@htidht" />
+    </div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "门店列表";
+    wxBase.Model.poi.wxPoilist poilist = ViewBag.poilist;
+}
+
+<h2>getpoilist</h2>
+
+@if (poilist.errcode != 0)
+{
+    Response.Write(poilist.errmsg);
+}
+else
+{
+    <table border="1" width="1000">
+        @for (int i = 0; i < poilist.business_list.Count; i++)
+        {
+            <tr>
+                <td width="200" valign="top">
+                    @if (@poilist.business_list[i].base_info.photo_list.Count > 0)
+                    {
+                        <img src="http://read.html5.qq.com/image?src=forum&q=5&r=0&imgflag=7&imageUrl=@poilist.business_list[i].base_info.photo_list[0].photo_url" width="200" />
+                    }
+                </td>
+                <td valign="top">
+                    <table width="800" border="0" style="margin:5px 0 5px 0;">
+                        <tr>
+                            <td valign="top">
+                                <p>@poilist.business_list[i].base_info.business_name</p>
+                            </td>
+                            <td valign="top">
+                                <p>@poilist.business_list[i].base_info.branch_name</p>
+                            </td>
+                            <td valign="top">
+                                <p>
+                                    @for (int j = 0; j < poilist.business_list[i].base_info.categories.Count; j++)
+                                    {
+                                        @poilist.business_list[i].base_info.categories[j]
+                                    }
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td valign="top">
+                                <p>@poilist.business_list[i].base_info.province / @poilist.business_list[i].base_info.city / @poilist.business_list[i].base_info.district</p>
+                            </td>
+                            <td>地址：@poilist.business_list[i].base_info.address</td>
+                            <td>开业时间：@poilist.business_list[i].base_info.open_time</td>
+                        </tr>
+                        <tr><td colspan="3"> @Html.ActionLink("查看门店信息", "viewinfo", new { poi_id = @poilist.business_list[i].base_info.poi_id })</td></tr>
+                        <tr><td colspan="3"> @Html.ActionLink("删除门店信息", "delete", new { poi_id = @poilist.business_list[i].base_info.poi_id })</td></tr>
+                        <tr><td colspan="3"> @Html.ActionLink("创建团购券", "addcard", new { poi_id = @poilist.business_list[i].base_info.poi_id })</td></tr>
+</table> 
+
+                </td>
+            </tr>
+        }
+    </table>
+}
+

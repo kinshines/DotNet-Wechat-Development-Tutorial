@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<br/><br/><br/><br /><br /><br /><br />
+<h2>上传永久图文素材内容图</h2>
+@using (Html.BeginForm("Upload", "Upload_newsimg", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <p>选择上传文件：</p><input name="file_newsimg" type="file" id="file_newsimg" />
+    <br />
+    <br />
+    <input type="submit" name="Upload_newsimg" value="上传" />
+}
+
+
+

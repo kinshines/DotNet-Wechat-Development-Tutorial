@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "第7章 客服管理";
+}
+
+<br/><br /><br /><br /><br />
+<h2>第7章 客服管理</h2>
+
+<br /><br /><br /><br /><br />
+<ul>
+    <li>@Html.ActionLink("获取客服账号的列表信息", "Index", "Kefu", new { area = "area7" }, null)</li>
+    <li>@Html.ActionLink("添加客服帐号", "Index", "kfaccount_add", new { area = "area7" }, null)</li>
+    <li>@Html.ActionLink("修改客服帐号", "Index", "kfaccount_edit", new { area = "area7" }, null)</li>
+    <li>@Html.ActionLink("删除客服帐号", "Index", "kfaccount_delete", new { area = "area7" }, null)</li>
+    <li>@Html.ActionLink("上传客服头像", "Index", " Upload_headimg", new { area = "area7" }, null)</li>
+    <li>@Html.ActionLink("群发消息", "sendall", "Home", new { area = "area7" }, null)</li>
+    <li>@Html.ActionLink("按openid群发消息", "SendtextByOpenids")</li>
+</ul>

@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "editgroup";
+}
+<br/><br />
+<br />
+<br />
+<br />
+<br />
+
+<h2>修改用户分组</h2>
+<br />
+<br />
+
+@using (Html.BeginForm("modifygroup", "Home", FormMethod.Post))
+{
+    <a>输入用户分组id</a><input type="h" name="groupid" value="@ViewBag.groupid"/>
+    <a>输入用户分组的新名字</a><input type="text" name="groupname"  value="@ViewBag.name"/>
+
+    <input type="submit" value="提交" />
+}
+
+

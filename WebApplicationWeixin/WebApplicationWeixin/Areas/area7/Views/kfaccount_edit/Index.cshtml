@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/style.css" rel="stylesheet" />
+<br/><br />
+<br />
+<br />
+<br />
+
+<h2>修改客服账号</h2>
+
+@using (Html.BeginForm("edit", "kfaccount", FormMethod.Post))
+{
+    <a>输入客服账号</a><input type="text" name="kfaccount" value="@ViewBag.oldname"/>
+    <a>输入新客服昵称</a><input type="text" name="nickname" />
+
+
+    <a>输入密码</a><input type="password" name="password" />
+    <input type="submit" value="提交" />
+}
+
+

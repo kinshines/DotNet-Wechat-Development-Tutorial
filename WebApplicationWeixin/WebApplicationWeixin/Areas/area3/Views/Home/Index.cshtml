@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<br/><br/>
+@Html.ActionLink("获取access_token", "get_access_token", new { area = "area3" }, null)   <br/>  
+@Html.ActionLink("获取微信服务器IP地址", "getcallbackip", new { area = "area3" }, null)

@@ -1,0 +1,100 @@
+﻿#orderbox{
+    display: block;
+    text-align: center;
+    margin: 50px auto 0 auto;
+    border: 1px solid #808080;
+    background-color: #eeeeee;
+    width: 1024px;
+    height: auto;
+    padding: 0px 10px 0 10px;
+
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.little_content{
+    font-family:微软雅黑;
+    font-size:small;
+    color:#474747;
+    height:30px;
+    line-height:30px;
+    margin:0px 10px 0 10px;
+}
+
+#zhifubao_box {
+    width:180px;
+    height:66px;
+    /*border:1px solid #808080;*/
+    margin:10px 0 10px 10px;
+    /*text-align:center;*/
+    cursor:pointer;
+    float:left;
+    background-image:url(/images/zhifubao_logo.jpg);
+}
+#weixinpay_box {
+    width:180px;
+    height:66px;
+    background-image:url(/images/WePayLogo.png);
+    background-repeat:no-repeat; 
+/*border:1px solid #808080;*/
+    margin:10px 0 10px 10px;
+    /*text-align:center;*/
+    cursor:pointer;
+    float:left;
+}
+
+#bank_box{
+        width:180px;
+    height:66px;
+    background-image:url(/images/bankLogo.jpg);
+    background-repeat:no-repeat; 
+/*border:1px solid #808080;*/
+    margin:10px 0 10px 10px;
+    /*text-align:center;*/
+    cursor:pointer;
+    float:left;
+
+}
+#pay_box{
+    width:100%;
+    float:left;
+    height:50px;
+}
+
+#btnPay{
+    display:block;
+    width:150px;
+    height:50px;
+    background-color:#ff6a00;
+    font-family:微软雅黑;
+    font-size: 26px;
+    color:#ffffff;
+    margin:30px auto 10px auto;
+    text-align:center;
+    padding:5px 0 0 0 ;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+
+.little_title{
+    font-family:微软雅黑;
+    font-size:small;
+    font-weight:bold;
+    color:#474747;
+    height:30px;
+    line-height:30px;
+    margin:0px 10px 0 10px;
+}
+
+.required_info
+{
+    font-family:微软雅黑;
+    font-size:small;
+    color :#ff0000;
+    display:none;
+}

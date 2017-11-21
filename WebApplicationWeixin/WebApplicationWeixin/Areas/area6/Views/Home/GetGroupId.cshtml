@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "GetGroupId";
+}
+
+<h2>查询用户所在分组</h2>
+
+@using (Html.BeginForm("Get", "GetGroupId", FormMethod.Post))
+{
+    <a>输入用户openid</a><input type="text" name="openid" />
+    <input type="submit" value="提交" />
+}
+
+

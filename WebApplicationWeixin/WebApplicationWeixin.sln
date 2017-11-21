@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationWeixin", "WebApplicationWeixin\WebApplicationWeixin.csproj", "{A17A26D2-3976-4E37-872B-5125E4E61340}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wxBase", "..\wxBase\wxBase\wxBase.csproj", "{7C0AA5A9-A929-4C70-81CB-40113D6A36E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A17A26D2-3976-4E37-872B-5125E4E61340}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17A26D2-3976-4E37-872B-5125E4E61340}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17A26D2-3976-4E37-872B-5125E4E61340}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17A26D2-3976-4E37-872B-5125E4E61340}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0AA5A9-A929-4C70-81CB-40113D6A36E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0AA5A9-A929-4C70-81CB-40113D6A36E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0AA5A9-A929-4C70-81CB-40113D6A36E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0AA5A9-A929-4C70-81CB-40113D6A36E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>获取获取图文统计数据</h2>
+@using (Html.BeginForm("getuserread", "DataCube", FormMethod.Post))
+{
+    <a>输入统计的起止日期：</a><input name="begindate" type="text" /><a>~</a><input name="enddate" type="text" />
+    <input type="submit" value="统计" />
+}
+
+

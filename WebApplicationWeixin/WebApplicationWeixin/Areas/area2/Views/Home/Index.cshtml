@@ -1,0 +1,22 @@
+﻿@model WebApplicationWeixin.Models.Person
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<br/><br/>
+<ul>
+    <li>@Html.ActionLink("例2-1", "Index", "Hello")</li>
+    <li>@Html.ActionLink("例2-2", "Index", "RenderSection")</li>
+
+</ul>
+
+
+<h2>Index</h2>
+<p>姓名:</p>  @Model.name
+<p>性别:</p>  @Model.sex
+<p>年龄:</p>  @Model.Age
+
+
+
+

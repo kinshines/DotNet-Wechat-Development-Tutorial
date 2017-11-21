@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "第6章 用户管理";
+}
+<br/><br /><br /><br /><br /><br />
+<h2>第6章 用户管理</h2>
+
+<table border="1">
+    <tr><td width="200" bgcolor="#eeeeee">用户组名</td><td width="100" bgcolor="#eeeeee">用户数</td><td width="100" bgcolor="#eeeeee">操作</td></tr>
+
+    @for (int i = 0; i < @Model.groups.Count; i++)
+    {
+        <tr><td width="200">@Model.groups[i].name</td><td width="100">@Model.groups[i].count</td><td>@Html.ActionLink("修改用户分组名", "editgroup", "Home", new { groupid = @Model.groups[i].id },null )<br/>@Html.ActionLink("删除用户分组名", "deletegroup", "Home", new { groupid = @Model.groups[i].id }, null)</td></tr>
+    }
+</table>
+<ul>
+    <li>@Html.ActionLink("添加用户组", "addgroup", "Home", new { area = "area6" }, null)</li>
+    <li>@Html.ActionLink("获取用户信息", "get_users", "Home", new { area = "area6" }, null) </ li >
+    <li>@Html.ActionLink("设置用户备注名", "Remark", "Home", new { area = "area6" }, null) </ li >
+    <li>@Html.ActionLink("查询用户所在分组", "GetGroupId", "Home")</li>
+    <li>@Html.ActionLink("移动用户到指定分组", " updatemembers", "Home", new { area = "area6" }, null)</li>
+    <li>@Html.ActionLink("批量移动用户到指定分组", "batchupdate", "Home", new { area = "area6" }, null)</li>
+</ul>

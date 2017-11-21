@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "getupstreammsgdistmonth";
+}
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="~/Content/zzsc.css">
+<link rel="stylesheet" href="~/Content/dcalendar.picker.css" />
+<br />
+<br />
+<br />
+<br />
+<h2>
+    <h2>获取获取消息发送分布月数据</h2>
+    @using (Html.BeginForm("getupstreammsgdistmonth", "DataCube", FormMethod.Post))
+    {
+        <a>输入统计的起止日期：</a><input id="begindate" name="begindate" type="text" /><a>~</a><input name="enddate" id="enddate" type="text" />
+        <input type="submit" value="统计" />
+    }
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/dcalendar.picker.js"></script>
+    <script type="text/javascript">
+    $('#begindate').dcalendarpicker({
+        format: 'yyyy-mm-dd'
+    });
+    $('#enddate').dcalendarpicker({
+		format:'yyyy-mm-dd'
+	});
+    </script>
+
